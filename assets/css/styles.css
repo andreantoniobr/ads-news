@@ -10,9 +10,6 @@
     --as-featured-post-2-img-height: 12rem;
 }
 
-/************************************************
-   Typography
-************************************************/
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
@@ -25,7 +22,7 @@ a {
 }
 
 /************************************************
-   Ads
+   Advertising
 ************************************************/
 .ads-container {
     max-width: 970px;
@@ -60,7 +57,7 @@ a {
     background: #000;
     line-height: 0;
 }
-.featured-post-img span {
+.featured-post-img .cat {
     font-weight: 600;
     color: #fff;
     line-height: 1.2;
@@ -98,7 +95,7 @@ a {
     line-height: 1.2;
     font-family: "Open Sans", sans-serif;
 }
-.featured-post-text span {
+.featured-post-text .secondary-text {
     float: left;
     width: 100%;
     position: relative;
@@ -110,6 +107,12 @@ a {
     text-transform: uppercase;
     margin-bottom: 10px;
 }
+
+.featured-post-text .read-more-button {
+    color: #777;
+    text-decoration: underline;
+}
+
 .featured-post-text-in {
     position: absolute;
     left: 0;
@@ -152,22 +155,19 @@ a {
     color: #fff;
 }
 
+.featured-post-container:hover .featured-post-text h2 {
+    color: var(--as-primary-text-color);
+}
+
 .featured-post-container:hover .featured-post-text-in h2,
 .featured-post-container:hover .featured-post-text-in p {
     color: #ccc;
 }
 
 .featured-post-3 .featured-post-img span,
-.featured-post-4 .featured-post-img span {
+.featured-post-4 .featured-post-img span.category-bottom {
     bottom: 15px;
     top: auto;
-}
-
-/************************************************
- Featured Post 1
-************************************************/
-.featured-post-1 .featured-post-text h2 {
-    font-size: 2.5rem;
 }
 
 /************************************************
@@ -233,32 +233,6 @@ a {
 }
 
 /************************************************
- Featured Post 5
-************************************************/
-.featured-post-5 .featured-post-text h2 {
-    font-size: 2.1rem;
-    letter-spacing: -2.5px;
-    margin-top: 0;
-}
-
-/************************************************
- Featured Post 6
-************************************************/
-.featured-post-6 .featured-post-text {
-    margin-top: 20px;
-}
-.featured-post-6 .featured-post-text h2 {
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.3;
-    margin-top: 0;
-}
-.featured-post-6 .featured-post-container:hover .featured-post-text h2 {
-    color: #00015e;
-}
-
-/************************************************
  Featured Post 7
 ************************************************/
 .featured-post-7 .featured-post-text-in {
@@ -271,26 +245,6 @@ a {
     font-size: 2.2rem;
     font-weight: 600;
     line-height: 1.2;
-}
-
-/************************************************
- Featured Post 8
-************************************************/
-.featured-post-8 .featured-post-text h2 {
-    font-size: 1.8rem;
-}
-.featured-post-8 .featured-post-text p {
-    float: left;
-    width: 100%;
-    color: #777;
-    margin-top: 20px;
-}
-
-/************************************************
- Featured Post 9
-************************************************/
-.featured-post-9 .featured-post-text h2 {
-    font-size: 2.5rem;
 }
 
 /************************************************
@@ -307,7 +261,6 @@ a {
     font-weight: 600;
     line-height: 1.2;
 }
-
 
 /************************************************
  Featured Post List
@@ -410,28 +363,7 @@ a {
     z-index: 1;
     font-family: "Open Sans", sans-serif;
 }
-@media (min-width: 767px) {
-    .cat-title h4:before {
-        content: "";
-        width: 100%;
-        height: 51px !important;
-        border-bottom: 1px solid #111;
-        position: absolute;
-        top: 0 !important;
-        background-color: transparent !important;
-    }
-    .cat-title h4:after {
-        height: 6px !important;
-        background-color: transparent !important;
-        border-right: 24px solid #111;
-        border-left: 65px solid #111;
-        padding: 0px 2px;
-        margin: 0px 0;
-        bottom: 0;
-        -webkit-border-after-width: 2px;
-        -webkit-border-before-width: 2px;
-    }
-}
+
 
 /************************************************
    Videos
@@ -454,9 +386,6 @@ a {
 	border-color: #fff;	
 }
 
-
-
-
 /************************************************
  Media Queries
 ************************************************/
@@ -476,5 +405,26 @@ a {
         margin-right: var(--as-featured-post-margin);
         width: var(--as-featured-post-2-img-width);
         height: var(--as-featured-post-2-img-height);
+    }
+
+    .cat-title h4:before {
+        content: "";
+        width: 100%;
+        height: 51px !important;
+        border-bottom: 1px solid #111;
+        position: absolute;
+        top: 0 !important;
+        background-color: transparent !important;
+    }
+    .cat-title h4:after {
+        height: 6px !important;
+        background-color: transparent !important;
+        border-right: 24px solid #111;
+        border-left: 65px solid #111;
+        padding: 0px 2px;
+        margin: 0px 0;
+        bottom: 0;
+        -webkit-border-after-width: 2px;
+        -webkit-border-before-width: 2px;
     }
 }

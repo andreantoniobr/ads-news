@@ -1,137 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description"
+        content="Site de Notícias criado em Bootstrap para um trabalho da cadeira Desenvolvimento Web I">
+    <meta name="keywords" content="Notícias, Trabalho, Bootstrap, Desenvolvimento Web I, Unifip, P3">
     <meta name="author" content="André Antônio, Thiago Araujo, Paulo Cleidson">
     <title>ADS News</title>
 
-        <!-- Bootstrap 5.3.3 -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
 
-        <!-- Custom styles -->
-        <link href="assets/css/styles.css" rel="stylesheet">    
-      
-        <!-- Font Icons -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Bootstrap 5.3.3 -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Font Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Header::begin -->
     <header class="bg-white pb-3 mb-2 mb-lg-5">
         <div class="container">
             <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                <span class="fs-4">Simple header</span>
-              </a>
-        
-              <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-              </ul>
+                <a href="/"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4">Simple header</span>
+                </a>
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                </ul>
             </div>
-          </div>
+        </div>
     </header>
+    <!-- Header::end -->
+
+    <!-- Main::begin -->
     <main>
+        <!-- Advertising::begin -->
         <section class="mb-2 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="ads-container">
                         <p class="ads-placeholder-label">Publicidade</p>
-                        <img src="assets/images/ads4.webp" alt="Publicidade">
-                    </div>                    
+                        <img src="assets/images/ads1.jfif" alt="Publicidade">
+                    </div>
                 </div>
-            </div> 
+            </div>
         </section>
+        <!-- Advertising::end -->
+
+        <!-- Featured::begin -->
         <section class="mb-2 mb-lg-5">
             <div class="container">
                 <div class="row g-4">
-                    <!-- Left big card -->
-                    <div class="col-12 col-md-6">
-                        <article>
-                            <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
-                                <a href="#" title="">
-                                    <div class="featured-post-container">
-                                        <div class="featured-post-img">
-                                            <span class="badge text-bg-warning">Tecnologia</span> 
-                                            <picture>
-                                                <img src="assets/images/lua.avif" alt=""> 
-                                            </picture>
-                                        </div>
-                                       <div class="featured-post-text featured-post-text-in">
-                                          <h2 class="mb-2 mb-lg-4">Sonda da ESA faz sobrevoo por lua de Marte e registra imagens</h2>
-                                          <p>Missão Hera tem como destino o asteroide Dimorphos, o primeiro a ter sua órbita desviada por ação humana. Mas, enquanto não chega lá, fez registros impressionante de uma das luas de Marte</p>
-                                          <span>10 minutos</span>
-                                       </div>
-                                       
-                                    </div>
-                                 </a>
+                    <div class="col-12 col-md-6">                        
+                        <!-- Carousel::begin -->
+                        <div id="main-carousel" class="carousel slide mb-6" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
                             </div>
-                        </article>                        
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
+                                        <a href="#" title="Sonda da ESA faz sobrevoo por lua de Marte e registra imagens">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <span class="cat badge text-bg-warning">Tecnologia</span>
+                                                    <picture>
+                                                        <img src="assets/images/lua.avif" alt="Imagem de sonda ESA na lua">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text featured-post-text-in read-more">
+                                                    <h2 class="mb-2 mb-lg-4">Sonda da ESA faz sobrevoo por lua de Marte e registra imagens</h2>
+                                                    <p>Missão Hera tem como destino o asteroide Dimorphos, o
+                                                        primeiro a ter sua
+                                                        órbita desviada por<span class="dots">...</span> <span
+                                                            class="more">ação humana. Mas, enquanto não chega lá,
+                                                            fez
+                                                            registros impressionante de uma das luas de
+                                                            Marte</span><span class="read-more-button">Leia Mais</span></p>
+                                                    <span class="secondary-text ">10 minutos</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
+                                        <a href="#" title="Por que tantos animais estranhos vivem na Austrália?">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <span class="cat badge text-bg-success">Ciência</span>
+                                                    <picture>
+                                                        <img src="assets/images/news/james-wainscoat.avif" alt="Cangurus na Austrália">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text featured-post-text-in read-more">
+                                                    <h2 class="mb-2 mb-lg-4">Por que tantos animais estranhos vivem
+                                                        na Austrália?</h2>
+                                                    <p>A fauna australiana contém alguns dos animais únicos do mundo, como cangurus<span class="dots">...</span> <span class="more">, petauros-do-açúcar (um mamífero planador), quokkas e os demônios da Tasmânia. Mas por que, afinal, tantos bichos estranhos vivem na Austrália?</span><span class="read-more-button">Leia Mais</span></p>                                                            
+                                                    <span class="secondary-text ">10 minutos</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
+                                        <a href="#" title="Adolescente descobre eco de luz de buraco negro maior que a Via Láctea">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <span class="cat badge text-bg-warning">Tecnologia</span>
+                                                    <picture>
+                                                        <img src="assets/images/news/eco-de-luz-buraco-negro.avif" alt="Buraco Negro">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text featured-post-text-in read-more">
+                                                    <h2 class="mb-2 mb-lg-4">Adolescente descobre eco de luz de buraco negro maior que a Via Láctea</h2>
+                                                    <p>MJulian Shapiro estima que o eco de luz tenha cerca de duas vezes a largura de toda a Via<span class="dots">...</span> <span
+                                                            class="more">Láctea. Se o cálculo estiver correto, este pode ser um candidato viável para o maior eco de luz já descoberto</span><span class="read-more-button">Leia Mais</span></p>
+                                                    <span class="secondary-text ">10 minutos</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#main-carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#main-carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- Carousel::end -->                        
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="row g-4 mb-4">
                             <article>
                                 <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
-                                    <a href="#" title="">
+                                    <a href="#" title="Instituto Butantan inaugura laboratório para preservar uma das cobras mais raras do Brasil">
                                         <div class="featured-post-container">
                                             <div class="featured-post-img">
-                                                <span class="badge text-bg-success">Ciência</span> 
+                                                <span class="cat badge text-bg-success">Ciência</span>
                                                 <picture>
-                                                    <img src="assets/images/ecologia.avif" alt=""> 
+                                                    <img src="assets/images/ecologia.avif" alt="Laboratorio de cobras do instituto butantan">
                                                 </picture>
                                             </div>
-                                           <div class="featured-post-text featured-post-text-in">
-                                              <h2>Instituto Butantan inaugura laboratório para preservar uma das cobras mais raras do Brasil</h2>
-                                              <span>45 minutos</span>
-                                           </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>Instituto Butantan inaugura laboratório para preservar uma das cobras mais raras do Brasil</h2>
+                                                <span class="secondary-text ">45 minutos</span>
+                                            </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-6">                            <article>
-                                <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div class="featured-post-img">
-                                                <span class="badge text-bg-danger">Entretenimento</span> 
-                                                <picture>
-                                                    <img src="assets/images/01.jpg" alt=""> 
-                                                </picture>
+                            <div class="col-12 col-md-6">
+                                <article>
+                                    <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                                        <a href="#" title="As celebridades de Hollywood que rejuvenesceram e chamam atenção pelo novo visual">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <span class="cat badge text-bg-danger">Entretenimento</span>
+                                                    <picture>
+                                                        <img src="assets//images/news/befunky.avif" alt="As celebridades de Hollywood que rejuvenesceram e chamam atenção pelo novo visual">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text featured-post-text-in">
+                                                    <h2>As celebridades de Hollywood que rejuvenesceram e chamam atenção
+                                                        pelo novo visual</h2>
+                                                    <span class="secondary-text ">15 de Março</span>
+                                                </div>
                                             </div>
-                                           <div class="featured-post-text featured-post-text-in">
-                                              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                              <span>15 de Março</span>
-                                           </div>
-                                        </div>
-                                     </a>
-                                </div>
-                            </article> 
-                        </div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
                             <div class="col-12 col-md-6">
                                 <article>
                                     <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
                                         <a href="#" title="">
                                             <div class="featured-post-container">
                                                 <div class="featured-post-img">
-                                                    <span class="badge text-bg-danger">Entretenimento</span> 
+                                                    <span class="cat badge text-bg-success">Ciência</span>
                                                     <picture>
-                                                        <img src="assets/images/01.jpg" alt=""> 
+                                                        <img src="assets/images/news/mammutknochen.avif" alt="">
                                                     </picture>
                                                 </div>
-                                               <div class="featured-post-text featured-post-text-in">
-                                                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                                  <span>2 horas atrás</span>
-                                               </div>
+                                                <div class="featured-post-text featured-post-text-in">
+                                                    <h2>Escavações na Áustria revelam ossos de mamute de 25 mil anos;
+                                                        fotos</h2>
+                                                    <span>2 horas atrás</span>
+                                                </div>
                                             </div>
-                                         </a>
+                                        </a>
                                     </div>
-                                </article> 
+                                </article>
                             </div>
                         </div>
                     </div>
@@ -139,12 +228,15 @@
                 </div>
             </div>
         </section>
+        <!-- Featured::end -->
+
+        <!-- Featured 2::begin -->
         <section class="mb-2 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="cat-title">
                         <h4><span>Destaques</span></h4>
-                     </div>
+                    </div>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3">
@@ -153,39 +245,19 @@
                                 <a href="#" title="">
                                     <div class="featured-post-container">
                                         <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
+                                            <span class="cat badge text-bg-danger">Entretenimento</span>
                                             <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
+                                                <img src="assets/images/01.jpg" alt="">
                                             </picture>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span class="feed-post-datetime">Há 1 hora</span>
-                                       </div>
-                                    </div>
-                                 </a>
-                            </div>
-                        </article> 
-                    </div>                    
-                    <div class="col-lg-3">
-                        <article>
-                            <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
-                                <a href="#" title="">
-                                    <div class="featured-post-container">
-                                        <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
-                                            <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
-                                            </picture>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span class="feed-post-datetime">Há 1 hora</span>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span class="feed-post-datetime">Há 47 minutos</span>
-                                       </div>
                                     </div>
-                                 </a>
+                                </a>
                             </div>
-                        </article> 
+                        </article>
                     </div>
                     <div class="col-lg-3">
                         <article>
@@ -193,19 +265,19 @@
                                 <a href="#" title="">
                                     <div class="featured-post-container">
                                         <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
+                                            <span class="cat badge text-bg-danger">Entretenimento</span>
                                             <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
+                                                <img src="assets/images/01.jpg" alt="">
                                             </picture>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span class="feed-post-datetime">Há 3 horas</span>
-                                       </div>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span class="feed-post-datetime">Há 47 minutos</span>
+                                        </div>
                                     </div>
-                                 </a>
+                                </a>
                             </div>
-                        </article> 
+                        </article>
                     </div>
                     <div class="col-lg-3">
                         <article>
@@ -213,201 +285,244 @@
                                 <a href="#" title="">
                                     <div class="featured-post-container">
                                         <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
+                                            <span class="cat badge text-bg-danger">Entretenimento</span>
                                             <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
+                                                <img src="assets/images/01.jpg" alt="">
                                             </picture>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span class="feed-post-datetime">Há 47 minutos</span>
-                                       </div>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span class="feed-post-datetime">Há 3 horas</span>
+                                        </div>
                                     </div>
-                                 </a>
+                                </a>
                             </div>
-                        </article> 
+                        </article>
+                    </div>
+                    <div class="col-lg-3">
+                        <article>
+                            <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
+                                <a href="#" title="">
+                                    <div class="featured-post-container">
+                                        <div class="featured-post-img">
+                                            <span class="cat badge text-bg-danger">Entretenimento</span>
+                                            <picture>
+                                                <img src="assets/images/01.jpg" alt="">
+                                            </picture>
+                                        </div>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span class="feed-post-datetime">Há 47 minutos</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
+        <!-- Featured 2::end -->
 
-        
+        <!-- Infinite Scroll::begin -->
         <section class="bg-white mb-2 mb-lg-5 p-2 p-lg-5">
             <div class="container">
                 <div class="row g-4">
-                    <!-- Left big card -->
-                    <div class="col-12 col-md-8 post-list">
+                    <div id="infinite-news" class="col-12 col-md-8 post-list">
                         <div class="row">
                             <article>
                                 <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
                                     <a href="#" title="">
                                         <div class="featured-post-container">
-                                            <div>                                                
-                                                <div class="featured-post-img">                                                                                                        
+                                            <div>
+                                                <div class="featured-post-img">
                                                     <picture>
-                                                        <img src="assets/images/01.jpg" alt=""> 
+                                                        <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
-                                               <div class="featured-post-text">
-                                                  <h2>Briga em academia que viralizou envolvia ex-casal</h2>
-                                                  <p>Drawings offended yet answered Jennings perceive laughing six did far. Rooms oh fully taken by worse do.</p>
-                                                  <span>2 dias atrás</span>
-                                               </div>
+                                                <div class="featured-post-text">
+                                                    <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                    <p>Drawings offended yet answered Jennings perceive laughing six did
+                                                        far. Rooms oh fully taken by worse do.</p>
+                                                    <span>2 dias atrás</span>
+                                                </div>
                                             </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                         <div class="row">
                             <article>
                                 <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
                                     <a href="#" title="">
                                         <div class="featured-post-container">
-                                            <div>                                                
-                                                <div class="featured-post-img">                                                                                                        
+                                            <div>
+                                                <div class="featured-post-img">
                                                     <picture>
-                                                        <img src="assets/images/01.jpg" alt=""> 
+                                                        <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
-                                               <div class="featured-post-text">
-                                                  <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41 bairros</h2>
-                                                  <p>Fatores foram identificados em iniciativa para melhorar os sistemas de saúde</p>
-                                                  <span>2 dias atrás</span>
-                                               </div>
+                                                <div class="featured-post-text">
+                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
+                                                        bairros</h2>
+                                                    <p>Fatores foram identificados em iniciativa para melhorar os
+                                                        sistemas de saúde</p>
+                                                    <span>2 dias atrás</span>
+                                                </div>
                                             </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                         <div class="row">
                             <article>
                                 <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
                                     <a href="#" title="">
                                         <div class="featured-post-container">
-                                            <div>                                                
-                                                <div class="featured-post-img">                                                                                                        
+                                            <div>
+                                                <div class="featured-post-img">
                                                     <picture>
-                                                        <img src="assets/images/01.jpg" alt=""> 
+                                                        <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
-                                               <div class="featured-post-text">
-                                                  <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41 bairros</h2>
-                                                  <p>Fatores foram identificados em iniciativa para melhorar os sistemas de saúde</p>
-                                                  <span>2 dias atrás</span>
-                                               </div>
+                                                <div class="featured-post-text">
+                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
+                                                        bairros</h2>
+                                                    <p>Fatores foram identificados em iniciativa para melhorar os
+                                                        sistemas de saúde</p>
+                                                    <span>2 dias atrás</span>
+                                                </div>
                                             </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                         <div class="row">
                             <article>
                                 <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
                                     <a href="#" title="">
                                         <div class="featured-post-container">
-                                            <div>                                                
-                                                <div class="featured-post-img">                                                                                                        
+                                            <div>
+                                                <div class="featured-post-img">
                                                     <picture>
-                                                        <img src="assets/images/01.jpg" alt=""> 
+                                                        <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
-                                               <div class="featured-post-text">
-                                                  <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41 bairros</h2>
-                                                  <p>Fatores foram identificados em iniciativa para melhorar os sistemas de saúde</p>
-                                                  <span>2 dias atrás</span>
-                                               </div>
+                                                <div class="featured-post-text">
+                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
+                                                        bairros</h2>
+                                                    <p>Fatores foram identificados em iniciativa para melhorar os
+                                                        sistemas de saúde</p>
+                                                    <span>2 dias atrás</span>
+                                                </div>
                                             </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                         <div class="row">
                             <article>
                                 <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
                                     <a href="#" title="">
                                         <div class="featured-post-container">
-                                            <div>                                                
-                                                <div class="featured-post-img">                                                                                                        
+                                            <div>
+                                                <div class="featured-post-img">
                                                     <picture>
-                                                        <img src="assets/images/01.jpg" alt=""> 
+                                                        <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
-                                               <div class="featured-post-text">
-                                                  <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41 bairros</h2>
-                                                  <p>Fatores foram identificados em iniciativa para melhorar os sistemas de saúde</p>
-                                                  <span>2 dias atrás</span>
-                                               </div>
+                                                <div class="featured-post-text">
+                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
+                                                        bairros</h2>
+                                                    <p>Fatores foram identificados em iniciativa para melhorar os
+                                                        sistemas de saúde</p>
+                                                    <span>2 dias atrás</span>
+                                                </div>
                                             </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
 
-                    
+
                     </div>
                     <div class="col-12 col-md-4">
+                        <div class="row">
+                            <div class="cat-title">
+                                <h4><span>Mais Lidas</span></h4>
+                            </div>
+                        </div>
                         <div class="row mb-4 mb-lg-5">
                             <div class="sticky-top">
                                 <div class="featured-post-list">
                                     <div class="most-read">
-                                        <a href="#" title="Prefeitura de São Bentinho inicia corte de terras na zona rural do município">
+                                        <a href="#"
+                                            title="Prefeitura de São Bentinho inicia corte de terras na zona rural do município">
                                             <div class="featured-post-container">
-                                              <div class="featured-post-text">
-                                                  <span class="cat-date">21/01/2025</span>
-                                                <h2>
-                                                  Prefeitura de São Bentinho inicia corte de terras na zona rural do município
-                                                </h2>
-                                              </div>
+                                                <div class="featured-post-text">
+                                                    <span class="cat-date">21/01/2025</span>
+                                                    <h2>
+                                                        Prefeitura de São Bentinho inicia corte de terras na zona rural
+                                                        do município
+                                                    </h2>
+                                                </div>
                                             </div>
-                                          </a>
-                                          <a href="#" title="Após pedido de Gilbertinho, governo da PB destina ônibus para Lagoa e Nova Olinda">
+                                        </a>
+                                        <a href="#"
+                                            title="Após pedido de Gilbertinho, governo da PB destina ônibus para Lagoa e Nova Olinda">
                                             <div class="featured-post-container">
-                                              <div class="featured-post-text">
-                                                  <span class="cat-date">24/01/2025</span>
-                                                <h2>
-                                                  Após pedido de Gilbertinho, governo da PB destina ônibus para Lagoa e Nova Olinda
-                                                </h2>
-                                              </div>
+                                                <div class="featured-post-text">
+                                                    <span class="cat-date">24/01/2025</span>
+                                                    <h2>
+                                                        Após pedido de Gilbertinho, governo da PB destina ônibus para
+                                                        Lagoa e Nova Olinda
+                                                    </h2>
+                                                </div>
                                             </div>
-                                          </a>
-                                          <a href="#" title="Inmet renova alerta de chuvas intensas para todas as cidades da Paraíba">
+                                        </a>
+                                        <a href="#"
+                                            title="Inmet renova alerta de chuvas intensas para todas as cidades da Paraíba">
                                             <div class="featured-post-container">
-                                              <div class="featured-post-text">
-                                                  <span class="cat-date">06/02/2025</span>
-                                                <h2>
-                                                  Inmet renova alerta de chuvas intensas para todas as cidades da Paraíba
-                                                </h2>
-                                              </div>
+                                                <div class="featured-post-text">
+                                                    <span class="cat-date">06/02/2025</span>
+                                                    <h2>
+                                                        Inmet renova alerta de chuvas intensas para todas as cidades da
+                                                        Paraíba
+                                                    </h2>
+                                                </div>
                                             </div>
-                                          </a>
-                                          <a href="#" title="Ídolo de Fluminense e Real Madrid, Marcelo anuncia aposentadoria">
+                                        </a>
+                                        <a href="#"
+                                            title="Ídolo de Fluminense e Real Madrid, Marcelo anuncia aposentadoria">
                                             <div class="featured-post-container">
-                                              <div class="featured-post-text">
-                                                  <span class="cat-date">06/02/2025</span>
-                                                <h2>
-                                                  Ídolo de Fluminense e Real Madrid, Marcelo anuncia aposentadoria
-                                                </h2>
-                                              </div>
+                                                <div class="featured-post-text">
+                                                    <span class="cat-date">06/02/2025</span>
+                                                    <h2>
+                                                        Ídolo de Fluminense e Real Madrid, Marcelo anuncia aposentadoria
+                                                    </h2>
+                                                </div>
                                             </div>
-                                          </a>
-                                          <a href="#" title="Transporte de peça de 250 toneladas interdita BR-101 e atrai curiosos">
+                                        </a>
+                                        <a href="#"
+                                            title="Transporte de peça de 250 toneladas interdita BR-101 e atrai curiosos">
                                             <div class="featured-post-container">
-                                              <div class="featured-post-text">
-                                                  <span class="cat-date">03/02/2025</span>
-                                                <h2>
-                                                    Transporte de peça de 250 toneladas interdita BR-101 e atrai curiosos
-                                                </h2>
-                                              </div>
+                                                <div class="featured-post-text">
+                                                    <span class="cat-date">03/02/2025</span>
+                                                    <h2>
+                                                        Transporte de peça de 250 toneladas interdita BR-101 e atrai
+                                                        curiosos
+                                                    </h2>
+                                                </div>
                                             </div>
-                                          </a>
-    
-                                    </div>                                
-                                  </div>
+                                        </a>
+
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -415,29 +530,35 @@
                             <div class="ads-container">
                                 <p class="ads-placeholder-label">Publicidade</p>
                                 <img src="assets/images/adv.png" alt="Publicidade">
-                            </div>                    
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+        <!-- Infinite Scroll::end -->
+
+        <!-- Advertising 2::begin -->
         <section class="mb-2 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="ads-container">
                         <p class="ads-placeholder-label">Publicidade</p>
                         <img src="assets/images/ads4.webp" alt="Publicidade">
-                    </div>                    
+                    </div>
                 </div>
-            </div> 
+            </div>
         </section>
+        <!-- Advertising 2::end -->
+
+        <!-- Videos::begin -->
         <section class="mb-2 mb-lg-5 videos p-4 p-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="cat-title">
                         <h4><span>Vídeos</span></h4>
-                     </div>
+                    </div>
                 </div>
                 <div class="row g-4">
                     <!-- Left big card -->
@@ -447,20 +568,23 @@
                                 <a href="#" title="">
                                     <div class="featured-post-container">
                                         <div class="featured-post-img">
-                                            <span class="badge text-bg-warning">Tecnologia</span> 
+                                            <span class="cat badge text-bg-warning">Tecnologia</span>
                                             <picture>
-                                                <img src="assets/images/lua.avif" alt=""> 
+                                                <img src="assets/images/lua.avif" alt="">
                                             </picture>
                                         </div>
-                                       <div class="featured-post-text featured-post-text-in">
-                                          <h2 class="mb-2 mb-lg-4">Sonda da ESA faz sobrevoo por lua de Marte e registra imagens</h2>
-                                          <p>Missão Hera tem como destino o asteroide Dimorphos, o primeiro a ter sua órbita desviada por ação humana. Mas, enquanto não chega lá, fez registros impressionante de uma das luas de Marte</p>
-                                       </div>
-                                       
+                                        <div class="featured-post-text featured-post-text-in">
+                                            <h2 class="mb-2 mb-lg-4">Sonda da ESA faz sobrevoo por lua de Marte e
+                                                registra imagens</h2>
+                                            <p>Missão Hera tem como destino o asteroide Dimorphos, o primeiro a ter sua
+                                                órbita desviada por ação humana. Mas, enquanto não chega lá, fez
+                                                registros impressionante de uma das luas de Marte</p>
+                                        </div>
+
                                     </div>
-                                 </a>
+                                </a>
                             </div>
-                        </article>                        
+                        </article>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="row g-4 mb-4">
@@ -469,18 +593,19 @@
                                     <a href="#" title="">
                                         <div class="featured-post-container">
                                             <div class="featured-post-img">
-                                                <span class="badge text-bg-success">Ciência</span> 
+                                                <span class="cat badge text-bg-success">Ciência</span>
                                                 <picture>
-                                                    <img src="assets/images/ecologia.avif" alt=""> 
+                                                    <img src="assets/images/ecologia.avif" alt="">
                                                 </picture>
                                             </div>
-                                           <div class="featured-post-text featured-post-text-in">
-                                              <h2>Instituto Butantan inaugura laboratório para preservar uma das cobras mais raras do Brasil</h2>
-                                           </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>Instituto Butantan inaugura laboratório para preservar uma das
+                                                    cobras mais raras do Brasil</h2>
+                                            </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                         <div class="row">
                             <article>
@@ -488,30 +613,33 @@
                                     <a href="#" title="">
                                         <div class="featured-post-container">
                                             <div class="featured-post-img">
-                                                <span class="badge text-bg-danger">Entretenimento</span> 
+                                                <span class="cat badge text-bg-danger">Entretenimento</span>
                                                 <picture>
-                                                    <img src="assets/images/01.jpg" alt=""> 
+                                                    <img src="assets/images/01.jpg" alt="">
                                                 </picture>
                                             </div>
-                                           <div class="featured-post-text featured-post-text-in">
-                                              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                           </div>
+                                            <div class="featured-post-text featured-post-text-in">
+                                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            </div>
                                         </div>
-                                     </a>
+                                    </a>
                                 </div>
-                            </article> 
+                            </article>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
+        <!-- Videos::end -->
+
+        <!-- Sponsored News::begin -->
         <section class="mb-2 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="cat-title">
                         <h4><span>Notícias patrocinadas</span></h4>
-                     </div>
+                    </div>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4">
@@ -520,39 +648,19 @@
                                 <a href="#" title="">
                                     <div class="featured-post-container">
                                         <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
+                                            <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
                                             <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
+                                                <img src="assets/images/01.jpg" alt="">
                                             </picture>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span>1 dia atrás</span>
-                                       </div>
-                                    </div>
-                                 </a>
-                            </div>
-                        </article> 
-                    </div>                    
-                    <div class="col-lg-4">
-                        <article>
-                            <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
-                                <a href="#" title="">
-                                    <div class="featured-post-container">
-                                        <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
-                                            <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
-                                            </picture>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span>1 dia atrás</span>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span>2 dias atrás</span>
-                                       </div>
                                     </div>
-                                 </a>
+                                </a>
                             </div>
-                        </article> 
+                        </article>
                     </div>
                     <div class="col-lg-4">
                         <article>
@@ -560,85 +668,134 @@
                                 <a href="#" title="">
                                     <div class="featured-post-container">
                                         <div class="featured-post-img">
-                                            <span class="badge text-bg-danger">Entretenimento</span> 
+                                            <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
                                             <picture>
-                                                <img src="assets/images/01.jpg" alt=""> 
+                                                <img src="assets/images/01.jpg" alt="">
                                             </picture>
                                         </div>
-                                       <div class="featured-post-text">
-                                          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                          <span>2 dias atrás</span>
-                                       </div>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span>2 dias atrás</span>
+                                        </div>
                                     </div>
-                                 </a>
+                                </a>
                             </div>
-                        </article> 
+                        </article>
+                    </div>
+                    <div class="col-lg-4">
+                        <article>
+                            <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
+                                <a href="#" title="">
+                                    <div class="featured-post-container">
+                                        <div class="featured-post-img">
+                                            <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
+                                            <picture>
+                                                <img src="assets/images/01.jpg" alt="">
+                                            </picture>
+                                        </div>
+                                        <div class="featured-post-text">
+                                            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                            <span>2 dias atrás</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 </div>
-                
+
             </div>
         </section>
+        <!-- Sponsored News::begin -->
     </main>
+    <!-- Main::end -->
+
+    <!-- Footer::begin -->
     <footer class="bg-white">
         <div class="container">
             <div class="py-5">
-              <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                  <h5>Section</h5>
-                  <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                  </ul>
-                </div>
-          
-                <div class="col-6 col-md-2 mb-3">
-                  <h5>Section</h5>
-                  <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                  </ul>
-                </div>
-          
-                <div class="col-6 col-md-2 mb-3">
-                  <h5>Section</h5>
-                  <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                  </ul>
-                </div>
-          
-                <div class="col-md-5 offset-md-1 mb-3">
-                  <form>
-                    <h5>Subscribe to our newsletter</h5>
-                    <p>Monthly digest of what's new and exciting from us.</p>
-                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                      <label for="newsletter1" class="visually-hidden">Email address</label>
-                      <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                      <button class="btn btn-primary" type="button">Subscribe</button>
+                <div class="row">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
                     </div>
-                  </form>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <form>
+                            <h5>Se inscreva na nossa newsletter!</h5>
+                            <p>Receba as notícias mais rápidas do curso de ADS da Unifip-PB</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">E-mail</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="E-mail">
+                                <button class="btn btn-primary" type="button">Inscrever</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
-          
-              <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>© 2024 Company, Inc. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                  <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-                </ul>
-              </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>© 2025 ADS News. Todos os direitos reservados.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg></a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-    </footer>    
+        </div>
+    </footer>
+    <!-- Footer::end -->
+
+    <!-- Custom Js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="assets/js/read-more.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nyt.js"></script>
 </body>
+
 </html>
