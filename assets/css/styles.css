@@ -27,6 +27,12 @@ a {
 /************************************************
    Ads
 ************************************************/
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+}
+
 .ads-container {
     max-width: 970px;
     height: auto;
