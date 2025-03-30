@@ -428,3 +428,7 @@ a {
         -webkit-border-before-width: 2px;
     }
 }
+
+.rounded-icon, .logo-footer {
+    border-radius: 10px;
+}
