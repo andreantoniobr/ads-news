@@ -22,37 +22,89 @@
     <!-- Font Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
 </head>
-
 <body>
     <!-- Header::begin -->
-    <header class="bg-white pb-3 mb-2 mb-lg-5">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="/"
-                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <img src="assets/images/AdsNews.jpg" alt="logo do site" width="80" height="90">
-                    <span class="fs-4">Ads News</span>
+    <header class="bg-dark py-2 py-lg-3 mb-2 mb-lg-5">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo::begin -->
+                <a class="navbar-brand">
+                    <img src="assets/images/adsnewslogo.png" alt="Logo AdsNews Dark" width="120">					
                 </a>
+                <!-- Logo::end -->
 
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                </ul>
-            </div>
-        </div>
+                <!-- Nav Right::begin -->
+                <div class="nav flex-nowrap align-items-center">
+                    <div class="nav-item d-none d-md-block">
+                        <a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Assine</a>
+                    </div>
+                    <a class="nav-link link-light" role="button" href="#" id="navSearch" >
+                        <i class="bi bi-search fs-4"> </i>
+                    </a>
+                    <div class="nav-item">
+                        <a class="nav-link p-0 link-light" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu">
+                            <i class="bi bi-text-right rtl-flip fs-2"> </i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Nav Right::end -->
+            </div>  
+        </nav>
     </header>
     <!-- Header::end -->
+
+    <!-- Menu OffCanvas::begin -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">            
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link d-flex py-2 py-sm-3 border-top border-bottom justify-content-between active" aria-current="page" href="#">
+                  Tecnologia
+                  <i class="bi bi-caret-right"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex py-2 py-sm-3 border-bottom justify-content-between" href="#">                  
+                  Entretenimento
+                  <i class="bi bi-caret-right"></i>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link d-flex py-2 py-sm-3 border-bottom justify-content-between" href="#">                  
+                  Ciência
+                  <i class="bi bi-caret-right"></i>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link d-flex py-2 py-sm-3 border-bottom justify-content-between" href="#">
+                    Cultura
+                    <i class="bi bi-caret-right"></i>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link d-flex py-2 py-sm-3 border-bottom justify-content-between" href="#">                 
+                  Brasil
+                  <i class="bi bi-caret-right"></i>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link d-flex py-2 py-sm-3 border-bottom justify-content-between" href="#">                  
+                  Mundo
+                  <i class="bi bi-caret-right"></i>
+                </a>
+              </li>               
+            </ul>
+          </div>
+      </div>
+      <!-- Menu OffCanvas::end -->
 
     <!-- Main::begin -->
     <main>
         <!-- Advertising::begin -->
-        <section class="mb-2 mb-lg-5">
+        <section class="my-4 my-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="ads-container">
@@ -65,10 +117,10 @@
         <!-- Advertising::end -->
 
         <!-- Featured::begin -->
-        <section class="mb-2 mb-lg-5">
+        <section class="mb-2 mb-xl-5">
             <div class="container">
                 <div class="row g-4">
-                    <div class="col-12 col-md-6">                        
+                    <div class="col-12 col-xl-6">                        
                         <!-- Carousel::begin -->
                         <div id="main-carousel" class="carousel slide mb-6" data-bs-ride="carousel">
                             <div class="carousel-indicators">
@@ -159,7 +211,7 @@
                         </div>
                         <!-- Carousel::end -->                        
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-xl-6">
                         <div class="row g-4 mb-4">
                             <article>
                                 <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
@@ -180,8 +232,8 @@
                                 </div>
                             </article>
                         </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6">
+                        <div class="row mb-4 mb-xl-0">
+                            <div class="col-12 col-md-6 mb-4 mb-md-0">
                                 <article>
                                     <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
                                         <a href="#" title="As celebridades de Hollywood que rejuvenesceram e chamam atenção pelo novo visual">
@@ -232,7 +284,7 @@
         <!-- Featured::end -->
 
         <!-- Featured 2::begin -->
-        <section class="mb-2 mb-lg-5">
+        <section class="mb-4 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="cat-title">
@@ -240,7 +292,7 @@
                     </div>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3">
+                    <div class="col-sm-6 col-lg-3">
                         <article>
                             <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
@@ -260,7 +312,7 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-sm-6 col-lg-3">
                         <article>
                             <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
@@ -280,7 +332,7 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-sm-6 col-lg-3">
                         <article>
                             <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
@@ -300,7 +352,7 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-sm-6 col-lg-3">
                         <article>
                             <div class="featured-post-3 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
@@ -326,16 +378,16 @@
         <!-- Featured 2::end -->
 
         <!-- Infinite Scroll::begin -->
-        <section class="bg-white mb-2 mb-lg-5 p-2 p-lg-5">
+        <section class="bg-white mb-4 mb-lg-5 p-4 p-lg-5">
             <div class="container">
-                <div class="row g-4">
+                <div class="row">
                     <div id="infinite-news" class="col-12 col-md-8 post-list">
                         <div class="row">
-                            <article>
-                                <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <article>
+                                    <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
                                                 <div class="featured-post-img">
                                                     <picture>
                                                         <img src="assets/images/01.jpg" alt="">
@@ -343,114 +395,121 @@
                                                 </div>
                                                 <div class="featured-post-text">
                                                     <h2>Briga em academia que viralizou envolvia ex-casal</h2>
-                                                    <p>Drawings offended yet answered Jennings perceive laughing six did
+                                                    <p class="d-none d-lg-block">Drawings offended yet answered Jennings perceive laughing six did
                                                         far. Rooms oh fully taken by worse do.</p>
                                                     <span>2 dias atrás</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="row">
-                            <article>
-                                <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <article>
+                                    <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
                                                 <div class="featured-post-img">
                                                     <picture>
                                                         <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
                                                 <div class="featured-post-text">
-                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
-                                                        bairros</h2>
-                                                    <p>Fatores foram identificados em iniciativa para melhorar os
-                                                        sistemas de saúde</p>
+                                                    <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                    <p class="d-none d-lg-block">Drawings offended yet answered Jennings perceive laughing six did
+                                                        far. Rooms oh fully taken by worse do.</p>
                                                     <span>2 dias atrás</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="row">
-                            <article>
-                                <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <article>
+                                    <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
                                                 <div class="featured-post-img">
                                                     <picture>
                                                         <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
                                                 <div class="featured-post-text">
-                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
-                                                        bairros</h2>
-                                                    <p>Fatores foram identificados em iniciativa para melhorar os
-                                                        sistemas de saúde</p>
+                                                    <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                    <p class="d-none d-lg-block">Drawings offended yet answered Jennings perceive laughing six did
+                                                        far. Rooms oh fully taken by worse do.</p>
                                                     <span>2 dias atrás</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="row">
-                            <article>
-                                <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <article>
+                                    <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
                                                 <div class="featured-post-img">
                                                     <picture>
                                                         <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
                                                 <div class="featured-post-text">
-                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
-                                                        bairros</h2>
-                                                    <p>Fatores foram identificados em iniciativa para melhorar os
-                                                        sistemas de saúde</p>
+                                                    <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                    <p class="d-none d-lg-block">Drawings offended yet answered Jennings perceive laughing six did
+                                                        far. Rooms oh fully taken by worse do.</p>
                                                     <span>2 dias atrás</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="row">
-                            <article>
-                                <div class="featured-post-2 mb-2 mb-lg-4 pb-2 pb-lg-4 border-bottom">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <article>
+                                    <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
                                                 <div class="featured-post-img">
                                                     <picture>
                                                         <img src="assets/images/01.jpg" alt="">
                                                     </picture>
                                                 </div>
                                                 <div class="featured-post-text">
-                                                    <h2>Rio Acre sobe quase 60 centímetros em 24 horas e atinge 41
-                                                        bairros</h2>
-                                                    <p>Fatores foram identificados em iniciativa para melhorar os
-                                                        sistemas de saúde</p>
+                                                    <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                    <p class="d-none d-lg-block">Drawings offended yet answered Jennings perceive laughing six did
+                                                        far. Rooms oh fully taken by worse do.</p>
                                                     <span>2 dias atrás</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <article>
+                                    <div class="featured-post-2 mb-4 pb-4 border-bottom">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <picture>
+                                                        <img src="assets/images/01.jpg" alt="">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text">
+                                                    <h2>Briga em academia que viralizou envolvia ex-casal</h2>
+                                                    <p class="d-none d-lg-block">Drawings offended yet answered Jennings perceive laughing six did
+                                                        far. Rooms oh fully taken by worse do.</p>
+                                                    <span>2 dias atrás</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-
-
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="row">
@@ -528,7 +587,7 @@
 
                         </div>
                         <div class="row">
-                            <div class="ads-container">
+                            <div class="ads-container mb-4 mb-md-0">
                                 <p class="ads-placeholder-label">Publicidade</p>
                                 <img src="assets/images/adv.png" alt="Publicidade">
                             </div>
@@ -541,7 +600,7 @@
         <!-- Infinite Scroll::end -->
 
         <!-- Advertising 2::begin -->
-        <section class="mb-2 mb-lg-5">
+        <section class="mb-4 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="ads-container">
@@ -554,7 +613,7 @@
         <!-- Advertising 2::end -->
 
         <!-- Videos::begin -->
-        <section class="mb-2 mb-lg-5 videos p-4 p-lg-5">
+        <section class="mb-4 mb-lg-5 videos p-4 p-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="cat-title">
@@ -562,8 +621,7 @@
                     </div>
                 </div>
                 <div class="row g-4">
-                    <!-- Left big card -->
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-xl-8">
                         <article>
                             <div class="featured-post-7 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
@@ -587,55 +645,59 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="row g-4 mb-4">
-                            <article>
-                                <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div class="featured-post-img">
-                                                <span class="cat badge text-bg-success">Ciência</span>
-                                                <picture>
-                                                    <img src="assets/images/ecologia.avif" alt="">
-                                                </picture>
+                    <div class="col-12 col-xl-4">
+                        <div class="row g-4">
+                            <div class="col-12 col-md-6 col-xl-12 mb-4 mb-md-0">
+                                <article>
+                                    <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <span class="cat badge text-bg-success">Ciência</span>
+                                                    <picture>
+                                                        <img src="assets/images/ecologia.avif" alt="">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text featured-post-text-in">
+                                                    <h2>Instituto Butantan inaugura laboratório para preservar uma das
+                                                        cobras mais raras do Brasil</h2>
+                                                </div>
                                             </div>
-                                            <div class="featured-post-text featured-post-text-in">
-                                                <h2>Instituto Butantan inaugura laboratório para preservar uma das
-                                                    cobras mais raras do Brasil</h2>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-12">
+                                <article>
+                                    <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
+                                        <a href="#" title="">
+                                            <div class="featured-post-container">
+                                                <div class="featured-post-img">
+                                                    <span class="cat badge text-bg-danger">Entretenimento</span>
+                                                    <picture>
+                                                        <img src="assets/images/01.jpg" alt="">
+                                                    </picture>
+                                                </div>
+                                                <div class="featured-post-text featured-post-text-in">
+                                                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="row">
-                            <article>
-                                <div class="featured-post-10 margin-bottom-in-small border-bottom-in-small">
-                                    <a href="#" title="">
-                                        <div class="featured-post-container">
-                                            <div class="featured-post-img">
-                                                <span class="cat badge text-bg-danger">Entretenimento</span>
-                                                <picture>
-                                                    <img src="assets/images/01.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="featured-post-text featured-post-text-in">
-                                                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
 
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Videos::end -->
 
         <!-- Sponsored News::begin -->
-        <section class="mb-2 mb-lg-5">
+        <section class="mb-4 mb-lg-5">
             <div class="container">
                 <div class="row">
                     <div class="cat-title">
@@ -643,12 +705,12 @@
                     </div>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-4">
+                    <div class="col-md-4">
                         <article>
                             <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
                                     <div class="featured-post-container">
-                                        <div class="featured-post-img">
+                                        <div class="featured-post-img featured-post-img-out">
                                             <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
                                             <picture>
                                                 <img src="assets/images/01.jpg" alt="">
@@ -663,12 +725,12 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-4">
                         <article>
                             <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
                                     <div class="featured-post-container">
-                                        <div class="featured-post-img">
+                                        <div class="featured-post-img featured-post-img-out">
                                             <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
                                             <picture>
                                                 <img src="assets/images/01.jpg" alt="">
@@ -683,12 +745,12 @@
                             </div>
                         </article>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-md-4">
                         <article>
                             <div class="featured-post-4 margin-bottom-in-small border-bottom-in-small">
                                 <a href="#" title="">
                                     <div class="featured-post-container">
-                                        <div class="featured-post-img">
+                                        <div class="featured-post-img featured-post-img-out">
                                             <span class="cat badge text-bg-danger category-bottom">Entretenimento</span>
                                             <picture>
                                                 <img src="assets/images/01.jpg" alt="">
@@ -717,18 +779,18 @@
             <div class="py-5">
                 <div class="row">
 
-                    <div class="col-5 col-md-1 mb-3">
-                        <img class="logo-footer" src="assets/images/AdsNews.jpg" alt="logo do site" width="70" height="80">
+                    <div class="col-12 col-md-2 mb-3">
+                        <img class="logo-footer w-100 p-3" src="assets/images/adsnewslogo.png" alt="logo do site">
                     </div>
 
-                    <div class="col-5 col-md-2 mb-3 text-white border-top">
+                    <div class="col-12 col-md-2 mb-3 text-white">
                         <h5>ADS News</h5>
                         <h6>Fique por dentro do código, por trás das notícias!</h6>
-                        <ul class="nav flex-column border-top">
+                        <ul class="nav flex-column">
                         </ul>
                     </div>
 
-                    <div class="col-6 col-md-2 mb-3 text-white">
+                    <div class="col-12 col-md-2 mb-3 text-white">
                         <h5>Pincipais</h5>
                         <ul class="nav flex-column">
                             <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-white">Home</a></li>
@@ -778,7 +840,6 @@
     <!-- Custom Js -->
     <script src="assets/js/read-more.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/nyt.js"></script>
 </body>
 
 </html>
