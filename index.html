@@ -382,7 +382,7 @@
             <div class="container">
                 <div class="row">
                     <div id="infinite-news" class="col-12 col-md-8 post-list">
-                        <div class="row">
+                        <div class="row" id="scroller">
                             <div class="col-12 col-sm-6 col-md-12">
                                 <article>
                                     <div class="featured-post-2 mb-4 pb-4 border-bottom">
@@ -509,6 +509,7 @@
                                     </div>
                                 </article>
                             </div>
+                            <div id="loading">Carregando...</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
@@ -632,12 +633,17 @@
                                                 <img src="assets/images/lua.avif" alt="">
                                             </picture>
                                         </div>
-                                        <div class="featured-post-text featured-post-text-in">
+                                        <div class="featured-post-text featured-post-text-in read-more">
                                             <h2 class="mb-2 mb-lg-4">Sonda da ESA faz sobrevoo por lua de Marte e
                                                 registra imagens</h2>
-                                            <p>Missão Hera tem como destino o asteroide Dimorphos, o primeiro a ter sua
-                                                órbita desviada por ação humana. Mas, enquanto não chega lá, fez
-                                                registros impressionante de uma das luas de Marte</p>
+                                                <p>Missão Hera tem como destino o asteroide Dimorphos, o
+                                                    primeiro a ter sua
+                                                    órbita desviada por<span class="dots">...</span> <span
+                                                        class="more">ação humana. Mas, enquanto não chega lá,
+                                                        fez
+                                                        registros impressionante de uma das luas de
+                                                        Marte</span><span class="read-more-button">Leia Mais</span>
+                                                </p>
                                         </div>
 
                                     </div>
@@ -840,6 +846,9 @@
     <!-- Custom Js -->
     <script src="assets/js/read-more.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script type="module" src="./assets/js/nyt.js"></script>
+    <script type="module" src="./assets/js/config.js"></script>
 </body>
 
 </html>
