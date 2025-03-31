@@ -56,6 +56,10 @@ a {
     border-radius: var(--as-featured-post-border-radius);
     overflow: hidden;
 }
+.news-item{
+    display: flex;
+    flex-direction: column;
+}
 .featured-post-img {
     background: #000;
     line-height: 0;

@@ -10,15 +10,14 @@ const NYT_CACHE_KEY = "nyt_news_cache";
 const RT_CACHE_KEY = "rt_news_cache";
 
 // State management
-let isFetchingRT = false;
-let hasMoreRTData = true;
-let rtCurrentOffset = 0;
-const rtPageSize = 5;
-let isLoading = false;
-let currentOffset = 0;
+let isFetching = false;
+let nytDataExhausted = false;
+let rtDataExhausted = false;
+let currentNytOffset = 0;
+let currentRtOffset = 0;
 const pageSize = 5;
 let allNewsItems = [];
-let allRTItems = [];
+let displayedUrls = new Set();
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,15 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Scroll handler with debouncing
 const scrollHandler = debounce(() => {
+    if (isFetching) return;
+
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     const scrollPosition = scrollTop + clientHeight;
-    
-    if (scrollPosition >= scrollHeight - 800 && !isLoading && !isFetchingRT) {
-        const remainingNytItems = allNewsItems.length - currentOffset;
-        
-        if (remainingNytItems > 0) {
-            loadMoreItems();
-        } else if (hasMoreRTData) {
+    const loadThreshold = scrollHeight * 0.5;
+
+    if (scrollPosition >= loadThreshold) {
+        if (!nytDataExhausted) {
+            loadMoreNytItems();
+        } else if (!rtDataExhausted) {
             loadRTData();
         }
     }
@@ -46,10 +46,10 @@ window.addEventListener('scroll', scrollHandler);
 // Main loading function
 async function loadInitialItems() {
     try {
+        isFetching = true;
         loadingIndicator.style.display = 'block';
-        isLoading = true;
-        
-        // Try to load from cache first
+        displayedUrls.clear();
+
         const cachedData = getCachedData(NYT_CACHE_KEY);
         if (cachedData) {
             allNewsItems = processNewsData(cachedData);
@@ -59,59 +59,66 @@ async function loadInitialItems() {
             allNewsItems = processNewsData(newsData);
             cacheData(NYT_CACHE_KEY, newsData);
         }
-        
-        renderNewsItems(allNewsItems.slice(0, pageSize));
-        currentOffset = pageSize;
-        
+
+        const initialItems = allNewsItems.slice(0, pageSize)
+            .filter(item => !displayedUrls.has(item.url));
+
+        renderNewsItems(initialItems);
+        currentNytOffset = Math.min(pageSize, allNewsItems.length);
+        initialItems.forEach(item => displayedUrls.add(item.url));
+
+        if (currentNytOffset >= allNewsItems.length) {
+            nytDataExhausted = true;
+        }
+
     } catch (error) {
         console.error("Error loading initial items:", error);
         showErrorToUser();
     } finally {
+        isFetching = false;
         loadingIndicator.style.display = 'none';
-        isLoading = false;
     }
 }
 
-async function loadMoreItems() {
+async function loadMoreNytItems() {
     try {
+        isFetching = true;
         loadingIndicator.style.display = 'block';
-        isLoading = true;
         
-        const endOffset = currentOffset + pageSize;
-        const itemsToShow = allNewsItems.slice(currentOffset, endOffset);
-        
+        const endOffset = currentNytOffset + pageSize;
+        const itemsToShow = allNewsItems.slice(currentNytOffset, endOffset)
+            .filter(item => !displayedUrls.has(item.url));
+
         if (itemsToShow.length > 0) {
             renderNewsItems(itemsToShow);
-            currentOffset = endOffset;
+            currentNytOffset = endOffset;
+            itemsToShow.forEach(item => displayedUrls.add(item.url));
         }
+
+        if (currentNytOffset >= allNewsItems.length) {
+            nytDataExhausted = true;
+        }
+
     } catch (error) {
-        console.error("Error loading more items:", error);
+        console.error("Error loading more NYT items:", error);
     } finally {
+        isFetching = false;
         loadingIndicator.style.display = 'none';
-        isLoading = false;
     }
 }
 
-// API Fetch function with caching
+// API Fetch functions
 async function fetchNewsData() {
-    const url = `${API_URL}?api-key=${API_KEY}&limit=20`;
+    const url = `${API_URL}?api-key=${API_KEY}`;
     const response = await fetch(url);
-    
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     return await response.json();
 }
 
-async function fetchRTData() {
-    const url = `${RT_API_URL}?api-key=${API_KEY}&offset=${rtCurrentOffset}&limit=${rtPageSize}`;
+async function fetchRTData(offset) {
+    const url = `${RT_API_URL}?api-key=${API_KEY}&offset=${offset}&limit=${pageSize}`;
     const response = await fetch(url);
-    
-    if (!response.ok) {
-        throw new Error(`RT API error! status: ${response.status}`);
-    }
-    
+    if (!response.ok) throw new Error(`RT API error! status: ${response.status}`);
     return await response.json();
 }
 
@@ -126,6 +133,7 @@ function processNewsData(data) {
             title: news.title,
             abstract: news.abstract,
             url: news.url,
+            imageUrl: getBestImageUrl(news.multimedia)
         }));
 }
 
@@ -139,16 +147,34 @@ function processRTData(data) {
             title: article.title,
             abstract: article.abstract,
             url: article.url,
+            imageUrl: getBestImageUrl(article.multimedia)
         }));
 }
 
-// RT Data loading with caching
+// Image handling
+function getBestImageUrl(multimedia) {
+    if (!multimedia || multimedia.length === 0) {
+        return 'https://via.placeholder.com/300x200?text=No+Image+Available';
+    }
+    
+    // Try to find the best quality image first
+    const image = multimedia.find(media => media.format === "mediumThreeByTwo440") || 
+                 multimedia.find(media => media.format === "Standard Thumbnail") ||
+                 multimedia[0];
+    
+    if (image && image.url) {
+        return image.url.startsWith('http') ? image.url : `https://www.nytimes.com/${image.url}`;
+    }
+    
+    return 'https://via.placeholder.com/300x200?text=No+Image+Available';
+}
+
+// RT Data loading with duplicate prevention
 async function loadRTData() {
     try {
-        isFetchingRT = true;
+        isFetching = true;
         loadingIndicator.style.display = 'block';
         
-        // Try cache first
         const cachedData = getCachedData(RT_CACHE_KEY);
         let rtData;
         
@@ -156,24 +182,31 @@ async function loadRTData() {
             rtData = cachedData;
             console.log("Loaded RT data from cache");
         } else {
-            rtData = await fetchRTData();
+            rtData = await fetchRTData(currentRtOffset);
             cacheData(RT_CACHE_KEY, rtData);
         }
         
-        const newRTItems = processRTData(rtData);
-        
-        if (newRTItems.length > 0) {
-            allRTItems = [...allRTItems, ...newRTItems];
-            renderNewsItems(newRTItems);
-            rtCurrentOffset += rtPageSize;
+        const newItems = processRTData(rtData)
+            .filter(item => !displayedUrls.has(item.url));
+
+        if (newItems.length > 0) {
+            renderNewsItems(newItems);
+            currentRtOffset += newItems.length;
+            newItems.forEach(item => displayedUrls.add(item.url));
         } else {
-            hasMoreRTData = false;
+            rtDataExhausted = true;
         }
+
+        // If we got less than requested, we've hit the end
+        if (newItems.length < pageSize) {
+            rtDataExhausted = true;
+        }
+
     } catch (error) {
         console.error("Error loading RT data:", error);
-        showErrorToUser("Failed to load additional news");
+        rtDataExhausted = true;
     } finally {
-        isFetchingRT = false;
+        isFetching = false;
         loadingIndicator.style.display = 'none';
     }
 }
@@ -214,19 +247,22 @@ function createNewsElement(newsItem) {
     article.className = 'news-item';
     article.innerHTML = `
         <div class="featured-post-2 mb-4 pb-4 border-bottom">
-            <a href="${newsItem.url}" title="${newsItem.title}">
-                                            <div class="featured-post-container">
-                                                <div class="featured-post-img">
-                                                    <picture>
-                                                        <img src="assets/images/01.jpg" alt="">
-                                                    </picture>
-                                                </div>
-                                                <div class="featured-post-text">
-                                                    <h2>${newsItem.title}</h2>
-                                                    <p class="d-none d-lg-block">${newsItem.abstract}</p>
-                                                    <span>${newsItem.section}</span>
-                                                </div>
-                                            </div>
+            <a href="${newsItem.url}" title="${newsItem.title}" target="_blank" rel="noopener">
+                <div class="featured-post-container">
+                    <div class="featured-post-img">
+                        <picture>
+                            <img src="${newsItem.imageUrl}" 
+                                 alt="${newsItem.title || 'News image'}"
+                                 class="news-image"
+                                 onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=Image+Not+Available'">
+                        </picture>
+                    </div>
+                    <div class="featured-post-text">
+                        <h2>${newsItem.title}</h2>
+                        <p class="d-none d-lg-block">${newsItem.abstract}</p>
+                        <span>${newsItem.section}</span>
+                    </div>
+                </div>
             </a>
         </div>
     `;
