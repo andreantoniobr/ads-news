@@ -266,7 +266,8 @@ function createNewsElement(newsItem) {
             </a>
         </div>
     `;
-    return article;
+    newsContainer.appendChild(article);
+    return newsContainer;
 }
 
 // Error handling
